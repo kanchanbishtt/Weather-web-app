@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-bar">
+    <div class="logo">☁️ Weather</div>
+    <div class="search-area">
+  <div class="search-row">
+    <input type="text" id="cityInput" />
+    <button id="searchBtn">Search</button>
+  </div>
+  <div id="message" class="message"></div>
+</div>
+
+    <button id="locationBtn" class="location-btn">Current Location</button>
+  </header>
+
+  <!-- Dashboard -->
+  <main class="dashboard">
+    <!-- City & Time -->
+    <section class="card city-time">
+      <h2 id="cityName">--</h2>
+      <div class="time" id="currentTime">--:--:--</div>
+      <div class="date" id="currentDate">--</div>
+    </section>
+
+    <!-- Main Weather -->
+    <section class="card main-weather">
+      <div class="temp" id="temperature">--°C</div>
+      <div class="feels" id="feelsLike">Feels like --°C</div>
+      <img id="weatherIcon" alt="weather icon" />
+      <div class="condition" id="weatherDesc">--</div>
+      <div class="sun">
+        <span>🌅 <span id="sunrise">--</span></span>
+        <span>🌇 <span id="sunset">--</span></span>
+      </div>
+    </section>
+
+    <!-- Weather Stats -->
+    <section class="card stats">
+      <div class="stat"><span>Humidity</span><strong id="humidity">--%</strong></div>
+      <div class="stat"><span>Wind</span><strong id="wind">-- km/h</strong></div>
+      <div class="stat"><span>Pressure</span><strong id="pressure">-- hPa</strong></div>
+    </section>
+
+    <!-- 5 Day Forecast -->
+    <section class="card forecast">
+      <h3>5 Day Forecast</h3>
+      <div id="dailyForecast" class="forecast-list"></div>
+    </section>
+
+    <!-- Hourly Forecast -->
+    <section class="card hourly">
+      <h3>Hourly Forecast</h3>
+      <div id="hourlyForecast" class="hourly-list"></div>
+    </section>
+  </main>
+
+  <div id="message" class="message"></div>
+
+  <script src="nscript.js"></script>
+</body>
+</html>
