@@ -11,30 +11,51 @@ body {
   color: #fff;
 }
 
+/* ================= TOP BAR ================= */
+
 .top-bar {
-  display: flex;
-  align-items: flex-start; /* 🔑 changed from center */
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
   padding: 0.75rem 1rem;
 }
 
-
+/* Upper left */
 .logo {
+  grid-column: 1;
+  grid-row: 1;
   font-size: 1.4rem;
   font-weight: bold;
+  white-space: nowrap;
 }
 
+/* Upper right */
+.location-btn {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #00c6ff;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Search bar centered BELOW */
 .search-area {
+  grid-column: 1 / -1;
+  grid-row: 2;
   display: flex;
-  flex-direction: column;
-  min-width: 260px;
+  justify-content: center;
 }
 
 .search-row {
   display: flex;
+  gap: 0.5rem;
 }
-
 
 .search-area input {
   padding: 0.5rem;
@@ -42,8 +63,7 @@ body {
   border: none;
 }
 
-.search-area button,
-.location-btn {
+.search-area button {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
@@ -52,12 +72,14 @@ body {
   cursor: pointer;
 }
 
+/* ================= DASHBOARD ================= */
+
 .dashboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(160px, auto);
   gap: 20px;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .card {
@@ -66,15 +88,15 @@ body {
   padding: 1rem;
   min-width: 0;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
-
+/* City & Time */
 .city-time .time {
   font-size: 2rem;
   margin: 0.5rem 0;
 }
 
+/* Main Weather */
 .main-weather {
   grid-column: span 2;
   text-align: center;
@@ -86,10 +108,11 @@ body {
 
 .sun {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 1rem;
 }
 
+/* Stats */
 .stats {
   display: flex;
   flex-direction: column;
@@ -101,16 +124,14 @@ body {
   justify-content: space-between;
 }
 
-.forecast {
-  grid-column: span 1;
-}
-
+/* Forecast */
 .forecast-list div {
   display: flex;
   justify-content: space-between;
   margin-top: 0.6rem;
 }
 
+/* Hourly */
 .hourly {
   grid-column: span 2;
 }
@@ -130,12 +151,16 @@ body {
   text-align: center;
 }
 
+/* Message */
 .message {
   font-size: 0.85rem;
   color: #ffb703;
-  min-height: 1.2em; /* 🔑 prevents jump */
+  min-height: 1.2em;
+  text-align: center;
+  margin-top: 0.3rem;
 }
 
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
   .dashboard {
@@ -145,5 +170,9 @@ body {
   .main-weather,
   .hourly {
     grid-column: span 1;
+  }
+
+  .top-bar {
+    grid-template-columns: auto 1fr auto;
   }
 }
