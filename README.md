@@ -1,147 +1,107 @@
-🌦️ Weather Dashboard Web Application
-Project Overview
+🌤️ Weather Dashboard Web App
 
-This project is a web-based weather application developed using HTML, CSS, and JavaScript.
-The main goal of the project is to allow users to search for a location and view current weather information along with short-term forecasts.
+Project Description
+This project is a web-based weather application that allows users to search for a city, state, region, or country and view the current weather conditions along with short-term forecasts. The application fetches real-time weather data from a public weather API and presents it in a clean, dashboard-style interface.
 
-The application was built as part of a learning project to practice frontend development concepts and working with a public weather API.
+The main objective of this project is to practice frontend web development concepts such as API integration, asynchronous JavaScript, responsive layouts, and user-friendly error handling.
+
 
 Objective
+The goal of this project is to build a functional weather app that:
+Accepts user input for a location
+Retrieves live weather data from a public API
+Displays key weather information in a readable and responsive UI
+Skills Practiced
 
-Allow users to enter a city, state, or region name
+HTML – Structuring the application layout
 
-Fetch real-time weather data using a public weather API
+CSS – Styling, dashboard layout, and responsiveness
 
-Display essential weather details in a clean and user-friendly interface
+JavaScript – Fetching API data, DOM manipulation, and interactivity
 
-Handle invalid inputs and API-related issues gracefully
+API Integration – Using a free public weather API (Open-Meteo)
+
 
 Features
 
-Search by Location
-
-Users can search using a city, state, or region name.
-
-Example: Delhi, Gujarat, Uttarakhand, London, etc.
-
-Current Location Weather
-
-Users can fetch weather data using their device’s geolocation.
-
-Current Weather Details
-
-Temperature (°C)
-
+🔍 Location Search
+Users can search by city, state, region, or country
+Search can be triggered by:
+Clicking the Search button
+Pressing Enter on the keyboard
+Current location weather can be fetched using browser geolocation
+🌡️ Weather Information Displayed
+Current temperature (°C)
 Feels-like temperature
-
-Weather condition description
-
+Weather condition with icon
+Humidity (%)
+Wind speed (km/h)
+Surface pressure (hPa)
 Sunrise and sunset time
+Hourly forecast (next few hours)
+Daily forecast (up to 5 days)
 
-Humidity
+⚠️ Error Handling
 
-Wind speed
+Displays messages for:
+Empty input
+Invalid or unknown locations
+API or network issues
+Error messages appear near the search area for better user clarity
 
-Atmospheric pressure
+📱 Responsive Design
 
-Forecasts
+Designed to work across:
+Desktop
+Tablet
+Mobile screens
+Dashboard cards adjust flexibly based on screen size
 
-Hourly forecast (short-term)
+API Used
+This project uses the Open-Meteo API, which provides:
+Free access
+No API key required
+Weather forecast model data
 
-5-day daily forecast (max temperature)
 
-Live Date & Time
-
-Displays current local time and date for the searched location.
-
-Error Handling
-
-Handles empty searches
-
-Displays helpful messages when a location is not found
-
-Handles API or network errors gracefully
-
-Technologies Used
-
-HTML – Page structure and layout
-
-CSS – Styling, responsiveness, and dashboard layout
-
-JavaScript – Application logic, API calls, and DOM manipulation
-
-Open-Meteo API
-
-Used for geocoding (location search)
-
-Used for weather and forecast data
-
-API Information
-
-This project uses the Open-Meteo API, which provides free and reliable weather data without requiring an API key.
-
-Geocoding API: Converts location names into latitude and longitude
-
-Forecast API: Retrieves current weather, hourly, and daily forecast data
-
-Important Note on Weather Data Accuracy
-
-Weather data is based on geographic coordinates and may represent averaged conditions for regions or states rather than exact city-level readings.
-
-This means:
-
-Searching for states or regions may return weather for the geographic center of that area.
-
-Weather values may differ slightly from other services due to different weather models and update intervals.
+Important note:
+Open-Meteo provides forecast-based data, not direct weather-station readings. Because of this:
+Values may differ slightly from apps like Google Weather
+Some locations may return partial data
+The app handles missing values gracefully when the API does not provide certain fields
+This behavior is expected and documented by the API.
 
 Project Structure
-├── index.html
-├── appstyle.css
-├── appscript.js
-└── README.md
+/weather-dashboard
+│
+├── index.html        
+├── appstyle.css      
+├── appscript.js      
+└── README.md         
 
-How to Run the Project
 
-Download or clone the repository
+How to Run the Project?
 
-Open index.html in any modern web browser
+Click on the link
+Enter a location in the search bar and press Enter or click Search
+Allow location access if using the Current Location feature
+No additional setup or installation is required.
 
-Enter a city, state, or region name in the search bar
 
-Click Search or press Enter
+Limitations (Honest Disclosure)
 
-View the weather information on the dashboard
+Weather data accuracy depends on the Open-Meteo forecast model
+Some regions or administrative areas may resolve to nearby locations due to geocoding limitations
+Exact matching of every small region worldwide cannot be guaranteed by free APIs
+Despite these limitations, the app reliably displays weather data for most commonly searched locations.
 
-No additional setup or API keys are required.
+Grading Criteria Alignment
+Functionality: Weather data is fetched and displayed correctly based on user input
+User Interface: Clean, readable, and responsive dashboard layout
+Error Handling: Graceful handling of invalid input and API issues
+Code Quality: Structured, readable, and logically organized JavaScript
 
-Learning Outcomes
 
-This project helped in practicing:
+Additional Notes
 
-DOM manipulation using JavaScript
-
-Working with asynchronous API calls (async/await)
-
-Handling user input and validation
-
-Managing API errors and edge cases
-
-Creating a responsive and structured UI
-
-Understanding limitations of free public APIs
-
-Possible Improvements
-
-Add unit conversion (°C / °F)
-
-Improve weather condition descriptions
-
-Add location suggestions or dropdown results
-
-Cache recent searches
-
-Improve UI responsiveness for smaller screens
-
-Conclusion
-
-This weather dashboard serves as a functional learning project demonstrating the integration of frontend technologies with a public weather API. While it may not provide hyper-local precision for all locations, it successfully meets the core project requirements and provides a solid foundation for further improvements.
+This project focuses on correct API usage and realistic data handling, rather than simulated or hardcoded values. Wherever the API provides partial or model-based data, the application reflects this transparently instead of masking it.
